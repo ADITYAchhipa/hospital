@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --background: #F8FAFC;
+  --foreground: #0f172a;
+  --card-bg: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.08);
+  --teal-glow: rgba(13, 148, 136, 0.15);
+  --cyan-glow: rgba(22, 163, 74, 0.15);
+  --rose-glow: rgba(239, 68, 68, 0.2);
+}
+
+html {
+  background-color: #F8FAFC !important;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom sleek modern scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(13, 148, 136, 0.2);
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0d9488;
+}
+
+/* Glassmorphism 2.0 utility classes */
+.glass-panel {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.glass-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(13, 148, 136, 0.25);
+  box-shadow: 0 10px 30px rgba(13, 148, 136, 0.06);
+  transform: translateY(-2px);
+}
+
+.glass-card-interactive {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-interactive:hover {
+  border-color: rgba(13, 148, 136, 0.35);
+  box-shadow: 0 10px 30px rgba(13, 148, 136, 0.1);
+  transform: translateY(-3px) scale(1.01);
+}
+
+.glass-input {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-input:focus {
+  outline: none;
+  border-color: #0d9488;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+}
+
+/* Glowing text and gradient text utilities */
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-teal {
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-rose {
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Holographic NFC Card Effect */
+.hologram-card {
+  background: #ffffff;
+  border: 1px solid rgba(13, 148, 136, 0.2);
+  box-shadow: 0 10px 30px rgba(13, 148, 136, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient glow backgrounds */
+.bg-mesh-gradient {
+  background: #F8FAFC;
+}
+
+.bg-radial-glow {
+  background: radial-gradient(circle at 50% -20%, rgba(13, 148, 136, 0.08) 0%, transparent 60%);
+}
+
+/* Pulse animation for clinical alerts */
+@keyframes cyberPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.35);
+  }
+}
+
+.glow-alert-pulse {
+  animation: cyberPulse 2s infinite ease-in-out;
+}
+

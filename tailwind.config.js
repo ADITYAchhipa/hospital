@@ -1,0 +1,110 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        blue: {
+          50: '#f0fdf4',
+          100: '#dcfce7',
+          200: '#bbf7d0',
+          300: '#86efac',
+          400: '#4ade80',
+          500: '#22c55e',
+          600: '#16a34a',
+          700: '#15803d',
+          800: '#166534',
+          900: '#14532d',
+          955: '#052e16',
+        },
+        indigo: {
+          50: '#f0fdfb',
+          100: '#ccfbf1',
+          200: '#99f6e4',
+          300: '#5eead4',
+          400: '#2dd4bf',
+          500: '#14b8a6',
+          600: '#0d9488',
+          700: '#0f766e',
+          800: '#115e59',
+          900: '#134e4a',
+          950: '#042f2e',
+        },
+        hospital: {
+          50: '#f0fdf9',
+          100: '#ccfbf1',
+          200: '#99f6e4',
+          300: '#5eead4',
+          400: '#2dd4bf',
+          500: '#14b8a6',
+          600: '#0d9488',
+          700: '#0f766e',
+          800: '#115e59',
+          900: '#134e4a',
+        },
+        navy: {
+          800: '#0c1427',
+          850: '#090e1c',
+          900: '#060a15',
+          950: '#04070f',
+        },
+        cyber: {
+          cyan: '#00F5D4',
+          teal: '#06D6A0',
+          blue: '#3B82F6',
+          rose: '#FF0055',
+          amber: '#F59E0B',
+          violet: '#8B5CF6',
+          dark: '#070B14',
+          card: '#0D1424',
+          border: 'rgba(255, 255, 255, 0.08)',
+        },
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['Outfit', 'Inter', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
+      },
+      boxShadow: {
+        'glow-teal': '0 0 25px -5px rgba(6, 214, 160, 0.4)',
+        'glow-cyan': '0 0 25px -5px rgba(0, 245, 212, 0.4)',
+        'glow-blue': '0 0 25px -5px rgba(59, 130, 246, 0.4)',
+        'glow-rose': '0 0 25px -5px rgba(255, 0, 85, 0.4)',
+        'glow-violet': '0 0 25px -5px rgba(139, 92, 246, 0.4)',
+        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.45)',
+        'glass-hover': '0 12px 40px 0 rgba(0, 245, 212, 0.15)',
+      },
+      backdropBlur: {
+        xs: '2px',
+        '2xl': '24px',
+      },
+      animation: {
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'shimmer': 'shimmer 2.5s infinite linear',
+        'radar-sweep': 'radarSweep 3s linear infinite',
+        'float': 'float 6s ease-in-out infinite',
+      },
+      keyframes: {
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
+        radarSweep: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-8px)' },
+        },
+      },
+    },
+  },
+  plugins: [],
+};
+
