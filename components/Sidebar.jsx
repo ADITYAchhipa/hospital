@@ -9,11 +9,6 @@ import {
   FilePlus,
   FileText,
   Droplets,
-  CreditCard,
-  Hospital as HospitalIcon,
-  Activity,
-  Radio,
-  Zap,
 } from 'lucide-react';
 import { useAuth } from '@/lib/authContext';
 
@@ -103,49 +98,6 @@ export function Sidebar() {
               </Link>
             );
           })}
-        </div>
-
-        {/* Hospital Facility Status Telemetry Widget */}
-        <div className="p-4 rounded-2xl bg-white/10 border border-white/20 space-y-3 shadow-sm relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full blur-2xl pointer-events-none"></div>
-
-          <div className="flex items-center justify-between text-white">
-            <div className="flex items-center gap-2">
-              <HospitalIcon className="w-4 h-4 text-cyan-300" />
-              <span className="text-xs font-bold uppercase tracking-wider font-display">Workstation Info</span>
-            </div>
-            <span className="flex h-2 w-2 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-          </div>
-
-          <div className="space-y-2 text-[11px] pt-1">
-            <div className="flex justify-between items-center">
-              <span className="text-blue-200">Facility ID:</span>
-              <span className="font-mono text-cyan-200 font-bold px-1.5 py-0.5 rounded bg-white/10 border border-white/25">
-                {hospital?.hospitalId || 'HOSP-001'}
-              </span>
-            </div>
-
-            <div className="space-y-1">
-              <div className="flex justify-between text-blue-200">
-                <span>ICU Bed Capacity:</span>
-                <span className="text-white font-bold">{hospital?.bedCount || 400}+ Beds</span>
-              </div>
-              <div className="w-full bg-white/10 rounded-full h-1.5 overflow-hidden">
-                <div className="bg-gradient-to-r from-cyan-400 to-blue-400 h-1.5 rounded-full w-3/4"></div>
-              </div>
-            </div>
-
-            <div className="flex justify-between items-center text-blue-200 pt-1">
-              <span>MongoDB Sync:</span>
-              <span className="text-cyan-255 text-cyan-200 font-bold flex items-center gap-1">
-                <Zap className="w-3 h-3 fill-cyan-400 text-cyan-400" />
-                Live Cluster
-              </span>
-            </div>
-          </div>
         </div>
       </div>
     </aside>

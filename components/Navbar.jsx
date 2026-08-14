@@ -43,9 +43,9 @@ export function Navbar() {
             <Link href="/dashboard" className="flex items-center gap-3.5 group">
               <div className="relative">
                 <img
-                  src="/logo.png?v=2"
+                  src="/logo.png"
                   alt="SwasthyaTap Logo"
-                  className="w-11 h-11 rounded-xl object-contain bg-white border border-slate-100 shadow-md group-hover:scale-105 transition-transform duration-300"
+                  className="w-10 h-10 object-contain rounded-xl shadow-xs group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div>
