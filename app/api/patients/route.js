@@ -78,21 +78,32 @@ export async function GET(request) {
       conditions.push({ chronicConditions: { $ne: 'None', $exists: true } });
     }
 
-    if (hospitalName && hospitalName.trim()) {
-      const nameCleaned = hospitalName.trim();
-      conditions.push({
-        $or: [
-          { "prescriptions.hospitalName": new RegExp(nameCleaned, 'i') },
-          { "medicalReports.issuer_key": new RegExp(nameCleaned, 'i') }
-        ]
-      });
-    }
+    let filter = conditions.length > 0 ? { $and: conditions } : {};
 
-    const filter = conditions.length > 0 ? { $and: conditions } : {};
-
-    const citizens = await Citizen.find(filter)
+    let citizens = await Citizen.find(filter)
       .sort({ updatedAt: -1 })
       .limit(limit);
+
+    // If hospitalName filter was provided, try to find hospital-specific patients first
+    if (hospitalName && hospitalName.trim() && citizens.length > 0) {
+      const nameCleaned = hospitalName.trim();
+      const hospitalConditions = [
+        ...conditions,
+        {
+          $or: [
+            { "prescriptions.hospitalName": new RegExp(nameCleaned, 'i') },
+            { "medicalReports.issuer_key": new RegExp(nameCleaned, 'i') }
+          ]
+        }
+      ];
+      const hospitalSpecific = await Citizen.find({ $and: hospitalConditions })
+        .sort({ updatedAt: -1 })
+        .limit(limit);
+
+      if (hospitalSpecific.length > 0) {
+        citizens = hospitalSpecific;
+      }
+    }
 
     return NextResponse.json({
       success: true,

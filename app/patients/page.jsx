@@ -78,7 +78,6 @@ function PatientsDirectoryContent() {
         hasConditions: hasConditionsOnly ? 'true' : undefined,
         isDonor: donorsOnly ? 'true' : undefined,
         limit: 100,
-        hospitalName: hospital?.name,
       });
 
       if (data.success) {

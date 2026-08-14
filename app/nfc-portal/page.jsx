@@ -47,7 +47,7 @@ export default function NfcPortalPage() {
 
   const loadPatients = async () => {
     try {
-      const data = await fetchPatients({ limit: 100, hospitalName: hospital?.name });
+      const data = await fetchPatients({ limit: 100 });
       if (data.success && data.patients.length > 0) {
         setPatients(data.patients);
         setSelectedPatientId(data.patients[0].profileId);

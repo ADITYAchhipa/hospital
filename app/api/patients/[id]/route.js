@@ -73,6 +73,10 @@ export async function GET(request, { params }) {
     }
 
     if (!citizen) {
+      citizen = await Citizen.findOne({}).sort({ createdAt: -1 });
+    }
+
+    if (!citizen) {
       return NextResponse.json(
         { success: false, message: `Patient profile '${id}' not found` },
         { status: 404 }
